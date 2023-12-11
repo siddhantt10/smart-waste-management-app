@@ -7,13 +7,13 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDA79aFh_hAhjkrub_datMTDkwghbwNXE4",
-  authDomain: "smart-waste-management-epics.firebaseapp.com",
-  projectId: "smart-waste-management-epics",
-  storageBucket: "smart-waste-management-epics.appspot.com",
-  messagingSenderId: "690147992393",
-  appId: "1:690147992393:web:93dda714d95f89a4173098",
-  measurementId: "G-4B975Y27RP"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STRAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
 // Initialize Firebase
