@@ -1,0 +1,75 @@
+/* Navbar.css */
+
+.navbar {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #dddddd;
+    padding: 0 50px;
+  }
+  
+  .logo img {
+    height: 50px; /* Adjust the height as needed */
+    mix-blend-mode: multiply;
+    
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-link {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 20px;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover {
+    color: #00a043; /* Change to your desired hover color */
+  }
+  
+  .nav-link::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #00a043; /* Change to your desired default underline color */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .logout a {
+    color: #02275f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .logout:hover a {
+    color: #56729b; /* Change to your desired hover color */
+  }
+  
+  /* Style for the active link (assuming you are using React Router) */
+  .nav-link.active {
+    color: #56729b; /* Change to your desired active color */
+  }
+  
+  .nav-link.active::after {
+    transform: scaleX(1);
+  }
+  

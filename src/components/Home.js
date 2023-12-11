@@ -6,7 +6,34 @@ function Home() {
   return (
     <div className='home'>
         <div className='home__container'>
-            <HomeCard />
+        <HomeCard
+          trashCanId='123'
+          sensorId='arduino123'
+          trashCapacity={100}
+          locationCoordinates='40.7128, -74.0060'
+          valueAtEmpty={0}
+        />
+        <HomeCard
+          trashCanId='123'
+          sensorId='arduino123'
+          trashCapacity={100}
+          locationCoordinates='40.7128, -74.0060'
+          valueAtEmpty={0}
+        />
+        <HomeCard
+          trashCanId='123'
+          sensorId='arduino123'
+          trashCapacity={100}
+          locationCoordinates='40.7128, -74.0060'
+          valueAtEmpty={0}
+        />
+        <HomeCard
+          trashCanId='123'
+          sensorId='arduino123'
+          trashCapacity={100}
+          locationCoordinates='40.7128, -74.0060'
+          valueAtEmpty={0}
+        />
         </div>
     </div>
   )
