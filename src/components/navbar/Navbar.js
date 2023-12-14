@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Make sure to import Link if you're using React Router
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
@@ -15,7 +15,7 @@ function Navbar() {
         <Link to='/' className='nav-link' activeClassName='active'>
           Dashboard
         </Link>
-        <Link to='/map' className='nav-link' activeClassName='active'>
+        <Link to='/collection' className='nav-link' activeClassName='active'>
           Map
         </Link>
         <Link to='/addform' className='nav-link' activeClassName='active'>
