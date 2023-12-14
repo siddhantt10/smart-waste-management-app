@@ -6,11 +6,30 @@
   margin-top: 150px;
 }
 
+button {
+  padding: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  border: aliceblue;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
 
 .map-container {
-  flex: 100%; /* Take up half the space */
+  flex: auto; /* Take up half the space */
+  height: 400px;
+  width: 100px;
   padding: 20px;
   margin-left: 20px; /* Add some spacing between home card and map */
+  margin-right: 100px;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-sizing: border-box; /* Include padding and border in element's total width and height */

@@ -25,9 +25,10 @@ function Map() {
 
       {/* Buttons below HomeCard */}
       <div className="buttons-container">
-        <button onClick={handleHomeCardChange}>Change HomeCard</button>
+        <button onClick={handleHomeCardChange}>Change HomeCard Data</button>
         <button onClick={handleOptimizedRoot}>Optimized Route</button>
         <button onClick={handleEmptyTrashCans}>Empty Trash Cans</button>
+        <button onClick={handleEmptyTrashCans}>Add Collection Point</button>
       </div>
 
       {/* Map component */}
