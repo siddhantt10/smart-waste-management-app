@@ -68,6 +68,8 @@ function App() {
           }
         />
         <Route path="/signin" element={<SignIn />} />
+
+        {/* Private paths */}
         <Route
           path="/dashboard"
           element={
@@ -101,6 +103,14 @@ function App() {
               <Navigate to="/signin" replace />
             )
           } 
+        />
+        <Route
+          path="*"
+          element={
+            <>
+              <NoAccess />
+            </>
+          }
         />
       </Routes>
     </Router>

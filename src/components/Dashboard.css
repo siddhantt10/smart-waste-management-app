@@ -1,5 +1,7 @@
 .dashb__container{
     display: flex;
+    flex-wrap: wrap;
+    margin-top: 150px;;
     justify-content: space-between;
     padding: 0 50px;
 }

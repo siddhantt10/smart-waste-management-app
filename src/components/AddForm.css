@@ -1,5 +1,8 @@
 .addForm{
     margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .addForm__form{
@@ -7,4 +10,19 @@
     flex-direction: column;
     width: 400px;
     padding: 50px;
+}
+
+.addForm__label{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.addForm__input{
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.addForm__button{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }

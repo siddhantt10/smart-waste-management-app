@@ -27,38 +27,43 @@ function AddForm() {
   return (
     <div className="addForm">
       <form onSubmit={handleSubmit} className="addForm__form">
-        <label id="sensorId" >Sensor ID: </label>
+        <label id="sensorId" className="addForm__label">Sensor ID: </label>
         <input
+          className="addForm__input"
           type="text"
           name="sensorId"
           id="sensorId"
           onChange={handleChange}
           required
         />
-        <label id="trashCanId" >Trash Can ID: </label>
+        <label id="trashCanId" className="addForm__label">Trash Can ID: </label>
         <input
+          className="addForm__input"
           type="text"
           name="trashCanId"
           id="trashCanId"
           onChange={handleChange}
           required
         />
-        <label id="locationCoordinates" >Location Coordinates: </label>
+        <label id="locationCoordinates" className="addForm__label">Location Coordinates: </label>
         <input
+          className="addForm__input"
           type="text"
           name="locationCoordinates"
           id="locationCoordinates"
           onChange={handleChange}
         />
-        <label id="locationAddress" >Location Address: </label>
+        <label id="locationAddress" className="addForm__label">Location Address: </label>
         <input
+          className="addForm__input"
           type="text"
           name="locationAddress"
           id="locationAddress"
           onChange={handleChange}
         />
-        <label id="fillCapacity" >Fill Capacity: </label>
+        <label id="fillCapacity" className="addForm__label">Fill Capacity: </label>
         <input
+          className="addForm__input"
           type="number"
           name="fillCapacity"
           id="fillCapacity"
@@ -66,7 +71,7 @@ function AddForm() {
           min="0" // Ensure non-negative capacity
           required
         />
-        <button type="submit">Submit</button>
+        <button type="submit" className="addForm__button">Submit</button>
       </form>
     </div>
   );
