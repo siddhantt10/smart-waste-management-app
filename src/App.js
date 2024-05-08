@@ -67,7 +67,13 @@ function App() {
             </>
           }
         />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signin" element={
+          user ? (
+            <Navigate to="/" replace />
+          ) : (
+            <SignIn />
+          )
+        } />
 
         {/* Private paths */}
         <Route

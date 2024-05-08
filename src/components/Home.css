@@ -1,3 +1,135 @@
-.home{
-    margin-top: 100px;
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  margin-top: 100px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Slide-based layout (if using slides) */
+.slide-container {
+  width: 80%;
+  margin-top: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%; /* Adjust height if needed for different image aspect ratios */
+  object-fit: cover;
+}
+
+.slide h2 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #000000;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+}
+
+.slide p {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: #000000;
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+
+/* Content-based layout (if using content transitions) */
+.content-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.content-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.content-description {
+  width: 70vw;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+/* Navigation buttons */
+.prev-btn,
+.next-btn {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Space buttons evenly */
+  margin-top: 20px; /* Adjust spacing as needed */
+  /* Added styles */
+  width: fit-content; /* Shrink container to fit button width */
+  align-items: center; /* Align buttons vertically */
+}
+
+.prev-btn,
+.next-btn {
+  /* ... existing button styles ... */
+  /* Optional: Adjust button margins for better spacing */
+  margin: 0 5px; /* Add a small margin between buttons */
+}
+.prev-btn {
+  background-color: #ccc;
+}
+
+.next-btn {
+  background-color: #ffffff;
+  color: #141414;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: #ddd;
+}
+
+.welcome-background {
+  background-image: url("../../public/Backimage.png");
+  background-size: cover;
+}
+
+.thank-background {
+  background-image: url("../../public/Backimage.png");
+  background-size: cover;
+}
+
+.about-background {
+  background-image: url("../../public/Backimage.png");
+  background-size: cover;
 }

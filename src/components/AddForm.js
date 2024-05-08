@@ -1,77 +1,115 @@
 import React from "react";
 import { useState } from "react";
 import "./AddForm.css";
+import {addDoc, collection} from 'firebase/firestore';
+import {db} from '../config/firebase';
+import { useNavigate } from "react-router-dom";
 
 // AddForm component
 
 function AddForm() {
-  const [formData, setFormData] = useState({
-    sensorId: "",
-    trashCanId: "",
-    locationCoordinates: "",
-    locationAddress: "",
-    fillCapacity: "",
-  });
+  const [formData, setFormData] = useState({});
+
+  const sensorCollectionRef = collection( db, "Trashcan");
+
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
+    const { name, value } = event.target;
+    if (name === "Location") {
+      const [latitude, longitude] = value.split(",").map(parseFloat); // assuming input format is "latitude, longitude"
+      setFormData({
+        ...formData,
+        Location: { _lat: latitude, _long: longitude },
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(formData);
+    try {
+      await addDoc(sensorCollectionRef, {
+        SensorID: formData.SensorID,
+        TrashcanID: formData.TrashcanID,
+        Location: formData.Location,
+        Address: formData.Address,
+        Capacity: formData.Capacity
+      });
+      navigate('/dashboard');
+    } catch (error) {
+      console.error(error);
+    }
+    
   };
+
+
   return (
     <div className="addForm">
       <form onSubmit={handleSubmit} className="addForm__form">
-        <label id="sensorId" className="addForm__label">Sensor ID: </label>
+        <label id="SensorID" className="addForm__label">
+          Sensor ID:{" "}
+        </label>
         <input
           className="addForm__input"
           type="text"
-          name="sensorId"
-          id="sensorId"
+          name="SensorID"
+          id="SensorID"
           onChange={handleChange}
           required
         />
-        <label id="trashCanId" className="addForm__label">Trash Can ID: </label>
+        <label id="TrashcanID" className="addForm__label">
+          Trash Can ID:{" "}
+        </label>
         <input
           className="addForm__input"
           type="text"
-          name="trashCanId"
-          id="trashCanId"
+          name="TrashcanID"
+          id="TrashcanID"
           onChange={handleChange}
           required
         />
-        <label id="locationCoordinates" className="addForm__label">Location Coordinates: </label>
+        <label id="Location" className="addForm__label">
+          Location Coordinates:{" "}
+        </label>
         <input
           className="addForm__input"
           type="text"
-          name="locationCoordinates"
-          id="locationCoordinates"
+          name="Location"
+          id="Location"
           onChange={handleChange}
+          required
         />
-        <label id="locationAddress" className="addForm__label">Location Address: </label>
+        <label id="Address" className="addForm__label">
+          Location Address:{" "}
+        </label>
         <input
           className="addForm__input"
           type="text"
-          name="locationAddress"
-          id="locationAddress"
+          name="Address"
+          id="Address"
           onChange={handleChange}
+          required
         />
-        <label id="fillCapacity" className="addForm__label">Fill Capacity: </label>
+        <label id="Capacity" className="addForm__label">
+          Fill Capacity:{" "}
+        </label>
         <input
           className="addForm__input"
           type="number"
-          name="fillCapacity"
-          id="fillCapacity"
+          name="Capacity"
+          id="Capacity"
           onChange={handleChange}
           min="0" // Ensure non-negative capacity
           required
         />
-        <button type="submit" className="addForm__button">Submit</button>
+        <button type="submit" className="addForm__button">
+          Submit
+        </button>
       </form>
     </div>
   );
