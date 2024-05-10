@@ -38,7 +38,7 @@ function Navbar() {
         <Link to="/dashboard" className="nav-link">
           Dashboard
         </Link>
-        <Link to="/map" className="nav-link">
+        <Link to="/collectionmap" className="nav-link">
           Map
         </Link>
         <Link to="/addform" className="nav-link">

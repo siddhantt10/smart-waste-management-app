@@ -11,6 +11,7 @@ import Dashboard from "./components/Dashboard";
 import AddForm from "./components/AddForm";
 import { Navigate } from "react-router-dom";
 import NoAccess from "./components/NoAccess";
+import Map from "./components/MapPage";
 
 //function
 
@@ -109,6 +110,24 @@ function App() {
               <Navigate to="/signin" replace />
             )
           } 
+        />
+        <Route 
+          path="/collectionmap"
+          element={
+            user ? (
+              isAdmin ? (
+                <>
+                  <Navbar />
+                  <Map />
+                </>
+              ) : (
+                <NoAccess />
+              )
+            ) : (
+              <Navigate to="/signin" replace />
+            )
+          }
+        
         />
         <Route
           path="*"

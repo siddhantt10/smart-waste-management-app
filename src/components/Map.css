@@ -1,0 +1,40 @@
+.map{
+    display: flex;
+}
+
+.map-left{
+    width: 40vw;
+    padding: 20px;
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.map-head{
+    padding: 25px;
+    font-size: 2rem;
+}
+
+.map-rgt{
+    width: 60vw;
+    height: 85vh;
+    background-color: rgb(111, 150, 113);
+    overflow-y: scroll;
+}
+
+.map-head-r{
+    padding: 30px;
+    padding-left: 50px;
+    font-size: 2rem;
+    color: white;
+}
+
+.map-container{
+    padding-left: 50px;
+    height: 60vh;
+    width: 50vw;
+}
+
+.mp-map{
+    height: 100%;
+    width: 100%;
+}

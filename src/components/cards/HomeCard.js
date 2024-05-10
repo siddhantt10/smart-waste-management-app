@@ -1,6 +1,7 @@
 import React from "react";
 import "./HomeCard.css";
 import { ReactComponent as TrashIcon } from "../../trash-bin.svg";
+import { useStateValue } from "../../StateProvider";
 
 function HomeCard({
   trashCanId,
@@ -9,6 +10,26 @@ function HomeCard({
   locationCoordinates,
   valueAtEmpty,
 }) {
+  // eslint-disable-next-line no-empty-pattern
+  const [{}, dispatch] = useStateValue();
+  // eslint-disable-next-line no-unused-vars
+  const [{ canCollection }] = useStateValue();
+
+  const addToMap = () => {
+    dispatch({
+      type: "add_to_map",
+      item: {
+        trashCanId: trashCanId,
+        sensorId: sensorId,
+        trashCapacity: trashCapacity,
+        locationCoordinates: locationCoordinates,
+        valueAtEmpty: valueAtEmpty,
+      }
+    })
+  };
+
+
+
   // Calculate fill percentage (dummy data for now)
   const fillPercentage = Math.floor(Math.random() * 101); 
 
@@ -47,7 +68,7 @@ function HomeCard({
 
         <div className="bottomSection">
           <button>Details</button>
-          <button>Add</button>
+          <button onClick={addToMap}>Add</button>
         </div>
       </div>
     </div>

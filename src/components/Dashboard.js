@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState} from 'react';
 import './Dashboard.css';
 import HomeCard from './cards/HomeCard';
 import { db } from '../config/firebase';
-import { getDocs, collection } from 'firebase/firestore'
+import { getDocs, collection } from 'firebase/firestore';
+import { useStateValue } from '../StateProvider'; 
+
 
 function Dashboard() {
+  // eslint-disable-next-line no-unused-vars
+  const [{ canCollection }] = useStateValue();
   const [canList, setCanList] = useState([]);
 
   const sensorCollectionRef = collection( db, "Trashcan");
@@ -25,6 +29,7 @@ function Dashboard() {
       }
 
     }
+
 
     setCanListFunc();
   // eslint-disable-next-line react-hooks/exhaustive-deps

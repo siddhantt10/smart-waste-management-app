@@ -1,0 +1,31 @@
+.mapCanCard{
+    min-height: 100px;
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+    border: 1px black solid;
+    margin: 20px;
+    border-radius: 10px;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.mapCanCard:hover{
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.25);
+    border: 0px;
+}
+
+.mcc-detail{
+    width: 40%;
+}
+
+.mcc-btns{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mcc-btn{
+    margin: 5px;
+}
