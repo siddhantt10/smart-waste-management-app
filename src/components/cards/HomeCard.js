@@ -21,7 +21,7 @@ function HomeCard({
   } else if (fillPercentage > 75) {
     fillColor = "red";
   }
-
+ 
   const iconStyle = {
     fill: fillColor,
     height: "100px",
