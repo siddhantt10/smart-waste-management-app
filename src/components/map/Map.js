@@ -32,14 +32,16 @@ function Map() {
       </div>
 
       {/* Map component */}
-      <MapContainer center={[51.505, -0.09]} zoom={13} className="map-container">
+      {/* <MapContainer center={[51.505, -0.09]} zoom={13} className="map-container">
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-      </MapContainer>
+      </MapContainer> */}
     </div>
   );
 }
+
+
 
 export default Map;

@@ -5,7 +5,6 @@ import Home from "./components/Home";
 import Navbar from "./components/navbar/Navbar";
 import Map from "./components/map/Map";
 
-
 //function
 
 function App() { 
